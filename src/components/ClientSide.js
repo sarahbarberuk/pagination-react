@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ".././styles.css"; // Add this line to link the CSS file
 
-const VanillaReact = () => {
+const ClientSide = () => {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(10);
@@ -27,13 +27,13 @@ const VanillaReact = () => {
       <Pagination
         postsPerPage={postsPerPage}
         totalPosts={posts.length}
-        setCurrentPage={setCurrentPage} // Passing setCurrentPage as a prop
+        setCurrentPage={setCurrentPage}
         currentPage={currentPage}
       />
     </div>
   );
 };
-
+// managing the loading state
 const PostList = ({ posts }) => {
   return (
     <ul className="list-group">
@@ -86,4 +86,4 @@ const Pagination = ({
   );
 };
 
-export default VanillaReact;
+export default ClientSide;

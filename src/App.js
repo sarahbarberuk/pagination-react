@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import VanillaReact from "./components/VanillaReact";
+import ClientSide from "./components/ClientSide";
 import ServerSide from "./components/ServerSide";
 import ReactPaginateLib from "./components/ReactPaginateLib";
 import ReactQuery from "./components/ReactQuery";
@@ -17,7 +17,7 @@ const Home = () => {
       <h1 className="my-5">React pagination examples</h1>
       <ul className="list-group">
         <li className="list-group-item">
-          <Link to="/vanilla-react">Vanilla React (client-side)</Link>
+          <Link to="/client-side">Client-side</Link>
         </li>
         <li className="list-group-item">
           <Link to="/server-side">Server-side</Link>
@@ -41,7 +41,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           =
-          <Route path="/vanilla-react" element={<VanillaReact />} />
+          <Route path="/client-side" element={<ClientSide />} />
           <Route path="/server-side" element={<ServerSide />} />
           <Route path="/react-paginate-lib" element={<ReactPaginateLib />} />
           <Route path="/react-query" element={<ReactQuery />} />=
