@@ -24,7 +24,7 @@ const ReactQuery = () => {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["posts", currentPage],
     queryFn: fetchPosts,
-    keepPreviousData: true, // Keep previous data while fetching new data
+    placeholderData: (prevData) => prevData ?? { data: [], totalPosts: 0 }, // Use placeholderData to keep previous data // Keep previous data while fetching new data
   });
 
   if (isLoading) return <p>Loading...</p>;
